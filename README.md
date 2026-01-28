@@ -30,7 +30,7 @@ Implementa regresión lineal con una sola variable (masa estelar) utilizando des
 ### 02_part2_polyreg.ipynb
 Implementa regresión polinómica con múltiples características (masa, temperatura, términos no lineales e interacción), y compara distintos modelos.
 
-## AWS SageMaker Execution Evidence
+## AWS SageMaker 
 
 Los notebooks fueron subidos a AWS SageMaker Studio mediante carga directa desde el entorno local. Ambos notebooks fueron ejecutados completamente sin errores dentro del entorno de SageMaker.
 
