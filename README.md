@@ -38,7 +38,7 @@ Los notebooks fueron subidos a AWS SageMaker Studio mediante carga directa desde
 
 Prueba de mauina virtual corriendo 
 
-![](images/0.png)
+![](Images/0.png)
 
 Pruebas de 01_part1_linreg_1feature.ipynb corriendo sin problemas 
 
