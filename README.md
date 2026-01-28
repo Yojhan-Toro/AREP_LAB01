@@ -36,7 +36,7 @@ Los notebooks fueron subidos a AWS SageMaker Studio mediante carga directa desde
 
 ### Screenshots
 
-Prueba de mauina virtual corriendo 
+Prueba de maquina virtual corriendo 
 
 ![](Images/0.png)
 
