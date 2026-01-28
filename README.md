@@ -42,20 +42,20 @@ Prueba de mauina virtual corriendo
 
 Pruebas de 01_part1_linreg_1feature.ipynb corriendo sin problemas 
 
-![](images/1.png)
-![](images/2.png)
-![](images/3.png)
-![](images/4.png)
-![](images/5.png)
+![](Images/1.png)
+![](Images/2.png)
+![](Images/3.png)
+![](Images/4.png)
+![](Images/5.png)
 
 Pruebas de 02_part2_polyreg.ipynb corriendo sin problemas 
 
-![](images/2_1.png)
-![](images/2_2.png)
-![](images/2_3.png)
-![](images/2_4.png)
-![](images/2_5.png)
-![](images/2_6.png)
+![](Images/2_1.png)
+![](Images/2_2.png)
+![](Images/2_3.png)
+![](Images/2_4.png)
+![](Images/2_5.png)
+![](Images/2_6.png)
 
 
 
