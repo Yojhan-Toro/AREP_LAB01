@@ -1,0 +1,211 @@
+================================================================================
+AUTOMATIC COPILOT EVALUATION
+Repository: Yojhan-Toro/AREP_LAB01
+Course: Digital Transformation and Enterprise Architecture
+Topic: Stellar Luminosity – Linear and Polynomial Regression from First Principles
+================================================================================
+
+--------------------------------------------------------------------------------
+SUMMARY
+--------------------------------------------------------------------------------
+The repository demonstrates a solid and technically competent implementation of
+linear regression (Part I) and polynomial regression with multiple features
+(Part II) entirely from first principles, using only NumPy and Matplotlib as
+required. Both notebooks are well-structured and cover the vast majority of
+the mandatory deliverables. The dataset is correctly defined inline, gradient
+derivations are accurate, and vectorized operations are used in Part II. The
+main gaps are: (1) the cost surface in Notebook 1 is computed (grid) but never
+plotted — a MANDATORY item; (2) the vectorized gradient function in Notebook 1
+is defined but not exercised in a vectorized gradient-descent run; (3) the
+multi-learning-rate comparison in Notebook 1 lacks a side-by-side convergence
+plot. Part II is nearly complete, with all mandatory elements present. The
+README includes adequate SageMaker execution evidence with multiple screenshots
+but offers only a cursory local-vs-cloud comparison.
+
+--------------------------------------------------------------------------------
+GRADING BREAKDOWN (0.0 – 5.0 scale)
+--------------------------------------------------------------------------------
+
+1. Repository Structure & Compliance ............... 0.5 / 0.5
+   - README.md present                                          ✓
+   - Two notebooks covering Part I and Part II                  ✓
+   - Datasets defined entirely inside notebooks                 ✓
+   - Only Python, NumPy, and Matplotlib used                    ✓
+   No deductions.
+
+2. Notebook 1 – Linear Regression (One Feature) .... 1.5 / 2.0
+   Criteria evaluated:
+   ✓ Dataset scatter plot with brief interpretation
+   ✓ Linear hypothesis (predict) and MSE cost function (loop-based)
+   ✓ Cost surface GRID computed correctly over (w, b) space
+   ✗ Cost surface PLOT missing — grid is computed but never rendered
+     (3D surface or contour plot absent; this is a MANDATORY deliverable) [-0.25]
+   ✓ Correct gradient derivation (dJ/dw, dJ/db)
+   ✓ Non-vectorized gradient descent implemented and run
+   ✓ Vectorized gradient function (compute_gradient_vec) defined
+   ✗ Vectorized gradient descent not demonstrated as a separate run
+     (vectorized function is defined but the main training loop still calls
+      the non-vectorized version; no explicit comparison) [-0.15]
+   ✓ Convergence plot (loss vs. iterations) present with discussion
+   ✓ Three learning-rate experiments performed (α = 0.001, 0.01, 0.05)
+   ✗ No side-by-side convergence curve comparison across learning rates
+     (only final scalar values are printed; no overlay plot) [-0.10]
+   ✓ Final fit scatter+line plot and error interpretation
+   ✓ Conceptual explanation of w (astro interpretation) and limits of linearity
+
+3. Notebook 2 – Polynomial Regression (Two Features) 1.85 / 2.0
+   Criteria evaluated:
+   ✓ Scatter plot with temperature color-encoding
+   ✓ Feature matrix [M, T, M², M·T] built via build_X()
+   ✓ Fully vectorized cost (MSE with matrix ops) and gradients
+   ✓ Gradient descent training and convergence plot
+   ✓ Three model variants defined: M1=[M,T], M2=[M,T,M²], M3=[M,T,M²,M·T]
+   ✓ Final costs J1, J2, J3 compared quantitatively
+   ✗ No bar chart or visual comparison of M1/M2/M3 costs [-0.10]
+     (printed values suffice conceptually but a visual is conventional)
+   ✓ w_MT sweep (interaction cost analysis) — MANDATORY — present and plotted
+   ✓ Inference demo with new (M, T) point and result interpretation
+   ✓ Conclusion discussing non-linearity benefits
+
+4. Cloud Execution Evidence (SageMaker) ............ 0.40 / 0.5
+   ✓ Both notebooks uploaded to and executed in AWS SageMaker Studio
+   ✓ Screenshot of SageMaker instance running
+   ✓ Multiple screenshots of Notebook 1 executing (cells + output)
+   ✓ Multiple screenshots of Notebook 2 executing (cells + output)
+   ✓ At least one plot visible in SageMaker screenshots
+   ✗ Local-vs-cloud comparison is minimal: README states notebooks ran
+     "without errors" but does not discuss differences in environment,
+     runtime, resource availability, or other meaningful distinctions [-0.10]
+
+--------------------------------------------------------------------------------
+FINAL GRADE
+--------------------------------------------------------------------------------
+Repository structure & compliance  :  0.50 / 0.50
+Notebook 1 – Linear regression     :  1.50 / 2.00
+Notebook 2 – Polynomial regression :  1.85 / 2.00
+Cloud execution evidence           :  0.40 / 0.50
+                                     ─────────────
+Final grade: 4.25 / 5.0
+
+Result: PASS  (≥ 3.0)
+
+--------------------------------------------------------------------------------
+STRENGTHS
+--------------------------------------------------------------------------------
+- Clean, well-organized notebooks with clearly numbered sections.
+- Datasets are self-contained (defined entirely within notebooks), no external
+  files required.
+- Mathematically correct gradient derivations (both loop and vectorized forms).
+- Part II demonstrates proper matrix-algebra formulation of cost and gradients
+  throughout the entire training pipeline.
+- Feature engineering is correct and well-labelled ([M, T, M², M·T]).
+- The interaction-weight sweep (w_MT cost curve) is present and visually
+  compelling, correctly identifying the optimal weight.
+- Inference demo provides a physically coherent result with interpretation.
+- SageMaker evidence is thorough: multiple screenshots covering both notebooks
+  and visible graphical output.
+- Conceptual explanations (meaning of w, limits of linearity, interaction terms)
+  are technically accurate and concise.
+
+--------------------------------------------------------------------------------
+ISSUES & MISSING ELEMENTS
+--------------------------------------------------------------------------------
+- [MANDATORY – Notebook 1] Cost surface plot is absent. The J(w,b) grid is
+  computed but never rendered. A 3D surface or contour plot with the gradient
+  descent trajectory (or at minimum a standalone contour) is required.
+- [Notebook 1] The vectorized gradient function (compute_gradient_vec) is
+  defined but never called. A vectorized gradient-descent run should be
+  executed and its results contrasted with the loop-based version.
+- [Notebook 1] Learning-rate experiments report only final scalar costs.
+  An overlay convergence plot comparing the three curves (α = 0.001, 0.01,
+  0.05) is the standard way to communicate the impact of α visually.
+- [Notebook 2] Model comparison (M1 vs M2 vs M3) is printed but not plotted.
+  A simple bar chart of final costs would make the comparison immediately clear.
+- [README] The SageMaker section does not contain a substantive local-vs-cloud
+  discussion. Even a brief comparison of environment setup, kernel availability,
+  execution time, or resource limits would satisfy this requirement.
+
+--------------------------------------------------------------------------------
+TA FEEDBACK TO STUDENT
+--------------------------------------------------------------------------------
+You have delivered a technically sound implementation that correctly covers the
+core mathematical content of both regression assignments. The gradient derivations
+are accurate, the vectorized formulations are clean, and the mandatory
+interaction-weight sweep and inference demo in Part II are well-executed.
+
+To earn full marks in a future revision, focus on three things:
+
+1. Always render the cost surface. Computing the J grid without plotting it
+   means the work is invisible. Add plt.contour / plt.contourf (and optionally
+   a 3D surface) and overlay the gradient-descent path. This is arguably the
+   most instructive visualization in Part I.
+
+2. Close the loop on vectorization. Defining compute_gradient_vec is good, but
+   you need to run a training loop with it and show that both approaches produce
+   identical results. The purpose of the exercise is to demonstrate and
+   validate the vectorized form.
+
+3. Use plots for comparisons, not just print statements. When comparing learning
+   rates or model variants (M1/M2/M3), a single overlay/bar plot communicates
+   the difference far more effectively than printed numbers.
+
+The README's SageMaker section is adequate for evidence purposes, but a
+paragraph comparing the local-development experience to the cloud environment
+(e.g., no local installation required, shared kernels, storage limits, cost)
+would make it more informative.
+
+Overall, this is a competent submission that demonstrates genuine understanding
+of regression from first principles. Well done.
+
+--------------------------------------------------------------------------------
+AI-GENERATION ASSESSMENT  (NON-GRADING — INFORMATIVE ONLY)
+--------------------------------------------------------------------------------
+
+A. Qualitative Assessment
+
+  Indicators consistent with AI assistance:
+  - Function names, docstring absence, and code structure follow a very clean
+    "tutorial" style that is common in AI-generated or AI-assisted notebooks
+    (e.g., predict / compute_cost / compute_gradient naming mirrors standard
+    ML-course templates almost exactly).
+  - Markdown explanations are brief, technically correct, and stylistically
+    uniform — they read like condensed course-note summaries with minimal
+    personal voice or tangential observations.
+  - The logical progression across both notebooks is unusually consistent and
+    free of the exploratory detours (dead-end cells, commented-out experiments,
+    incremental debugging) typical of student work.
+  - Generic phrasing appears in comments ("El costo disminuye de forma estable"
+    matches boilerplate ML-course language).
+
+  Indicators consistent with human authorship:
+  - A minor practical imperfection is visible: in Notebook 2 the learning rate
+    is set to 1e-12 to avoid divergence due to unscaled temperature features —
+    this kind of pragmatic numerical adjustment often reflects genuine
+    trial-and-error rather than a purely generated solution.
+  - The Spanish-language markdown mixes colloquial phrasing with technical
+    vocabulary, suggesting the student wrote (or edited) the explanations.
+  - The cost-surface grid is computed but not plotted — an oversight unlikely
+    to appear in a fully AI-generated solution intended to be complete.
+
+B. Quantitative Estimate
+
+  Code:                  ~55% AI involvement
+  Explanations/markdown: ~45% AI involvement
+  README:                ~40% AI involvement
+
+C. Commentary
+
+  The repository exhibits several hallmarks of moderate AI assistance: clean,
+  idiomatic code structure, uniform explanation style, and very few exploratory
+  or debugging artifacts. At the same time, pragmatic choices (e.g., the very
+  small learning rate in Notebook 2) and the missing cost-surface plot suggest
+  that a human was actively working with the code rather than accepting a fully
+  generated solution verbatim. The most likely scenario is that the student used
+  AI tools to accelerate scaffolding and phrasing, then adapted the code to the
+  specific dataset and assignment requirements.
+
+  This assessment is observational and does not imply misconduct.
+
+================================================================================
+End of Automatic Copilot Evaluation
+================================================================================
